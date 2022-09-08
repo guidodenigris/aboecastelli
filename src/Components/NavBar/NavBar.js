@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../assets/logoaboe.png'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "./NavBar.css"
+import CartWidget from '../CartWidget/CardWidget';
 
 const NavBar = () => {
     return (
@@ -13,7 +13,7 @@ const NavBar = () => {
                 <a style= {styles.navegacion} href="">Decoración</a>
                 <a style= {styles.navegacion} href="">Contacto</a>
             </nav>   
-            <ShoppingCartIcon style= {styles.carro}  sx={{ fontSize: 50 }}/>           
+            <CartWidget />           
         </header>
     )
 }
@@ -33,17 +33,12 @@ const styles = {
         color: 'whitesmoke',
         textDecoration: 'none',
         fontSize: '20px'
-        
-    },
-    carro:{
-        paddingRight: 120,
-        color: 'whitesmoke'
-
     },
     titulo:{
         color: 'whitesmoke'
     }
 }
+
 
 
 export default NavBar
