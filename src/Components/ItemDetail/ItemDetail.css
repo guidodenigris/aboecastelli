@@ -1,0 +1,46 @@
+.container {
+    width: 60%;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 35%, rgba(55,55,55,1) 100%)
+}
+
+
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+
+}
+
+.precio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+
+}
+
+
+.detalle{
+    color: whitesmoke;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+
+    padding-left: 50px;
+    padding-bottom: 10px;
+    
+}
+
+.imagenStyle{
+    
+    width: 40%;
+    padding-left: 350px;
+}
+
+.contenido{
+    width: 100%;
+}
+
