@@ -2,18 +2,21 @@ import React from 'react'
 import logo from '../../assets/logoaboe.png'
 import "./NavBar.css"
 import CartWidget from '../CartWidget/CardWidget';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <header style= {styles.container}>
-             <img style= {styles.img} src={logo} alt= 'logo' />
+             <NavLink to='/'><img style= {styles.img} src={logo} alt= 'logo' /></NavLink>
              <h1 style= {styles.titulo}>A bit of everything</h1>
              <nav>
-                <a style= {styles.navegacion} href="">Impresión 3D</a>
-                <a style= {styles.navegacion} href="">Decoración</a>
-                <a style= {styles.navegacion} href="">Contacto</a>
-            </nav>   
-            <CartWidget />           
+                <NavLink style= {styles.navegacion} to='/categoria/impresion3d'>Impresión 3D</NavLink>
+                <NavLink style= {styles.navegacion} to='/categoria/decoracion'>Decoración</NavLink>
+                <NavLink style= {styles.navegacion}>Contacto</NavLink>
+            </nav>
+            <NavLink to='cart'>
+                <CartWidget />           
+            </NavLink>   
         </header>
     )
 }
@@ -26,7 +29,7 @@ const styles = {
         alignItems: 'center'
     },
     img:{
-        width: '12%'
+        width: '100%'
     },
     navegacion:{
         padding: 10,

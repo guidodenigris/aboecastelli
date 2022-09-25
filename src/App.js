@@ -1,8 +1,10 @@
 import React from "react"
 import { ItemCount } from "./Components/ItemCount/index.js"
 import NavBar from "./Components/NavBar/NavBar.js"
+import Cart from "./Components/Cart"
 import ItemDetailContainer from "./Components/ItemDetailContainer"
 import ItemListContainer from "./Container/ItemListContainer/ItemListContainer"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
 const App = () => {
@@ -12,9 +14,15 @@ const App = () => {
 
     return (
         <>
-            <NavBar />
-            <ItemListContainer greeting={saludo}/>
-            <ItemDetailContainer />
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<ItemListContainer greeting={saludo}/>}/>
+                    <Route path="/categoria/:categoriaId" element={<ItemListContainer greeting={saludo}/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
+                    <Route path="/detalle" element={<ItemDetailContainer />}/>
+                </Routes>
+            </BrowserRouter>
         </>
 
     )
