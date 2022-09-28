@@ -23,6 +23,25 @@
 }
 
 
+.informacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: whitesmoke;
+    font-style: none;
+}
+
+.finalizar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: whitesmoke;
+    font-style: none;
+}
+
+
 .detalle{
     color: whitesmoke;
     margin-top: 3rem;
