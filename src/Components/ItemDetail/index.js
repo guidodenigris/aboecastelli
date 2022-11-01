@@ -25,7 +25,7 @@ const ItemDetail = ({data}) => {
             <div className="contenido">
                 <h1 className="title">{data.title}</h1>
                 <h2 className="informacion">{data.desc}</h2>
-                <h3 className="precio">{data.precio}</h3>
+                <h3 className="precio">{data.price}</h3>
                 {
                     goToCart
                     ? <Link className="finalizar" to='/cart'>Finalizar compra</Link>

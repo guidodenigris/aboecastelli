@@ -1,8 +1,9 @@
 import { Center, Flex } from '@chakra-ui/react';
-import { addDoc, getFirestore } from 'firebase/firestore';
+import { addDoc, getFirestore, collection } from 'firebase/firestore';
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../Context/CartContext';
+import {db} from '../../firebase/config'
 import ItemCart from '../ItemCart'
 import './Cart.css'
 
@@ -12,26 +13,26 @@ const Cart = () => {
 
     // Orden de compra
 
-        const order = {
-            buyer: {
-                name: 'Guido',
-                email: 'guido.dn59@gmail.com',
-                phone: '2245319821',
-                adress: 'Castelli'
+    const order = {
+        buyer: {
+             name: 'Guido',
+            email: 'guido.dn59@gmail.com',
+            phone: '2245319821',
+            adress: 'Castelli'
 
-            },
-            items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
-            total: totalPrice (),
+        },
+        items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
+        total: totalPrice (),
 
-        }
+    }
 
 
     const handleClick = () => {
 
         const db = getFirestore ();
-        const ordersCollection = collection{db, 'orders'};
-        addDoc{ordersCollection, order}
-        .then (({id}) => console.log(id));
+        const ordersCollection = collection(db, 'orders');
+        addDoc(ordersCollection, order)
+            .then (({ id }) => console.log(id));
 
 
     }
